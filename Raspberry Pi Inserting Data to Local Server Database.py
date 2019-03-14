@@ -27,6 +27,7 @@ db.commit()#here we commit the results in our database
 """ PART 2 IMPLEMENTATION WITH THE USE OF A FUNCTION  """
 from Adafruit_BME280 import *
 import datetime
+import time
 
 sensor = BME280(t_mode=BME280_OSAMPLE_8, p_mode=BME280_OSAMPLE_8)
 temperature = sensor.read_temperature()
@@ -48,6 +49,7 @@ def datalogging(option):
               cursor.execute("INSERT INTO YOUR_TABLE(temperature,pressure)" #inserts in your table's collumns the data given below
                   "VALUES('%s','%s')" ,(temperature,pressure))#here we provide the sensor data
               db.commit()#here we commit the results in our database
+              time.sleep(1)
                 
     elif option == 'loop':
         try:
@@ -57,6 +59,7 @@ def datalogging(option):
                 cursor.execute("INSERT INTO YOUR_TABLE(temperature,pressure)" #inserts in your table's collumns the data given below
                   "VALUES('%s','%s')" ,(temperature,pressure))#here we provide the sensor data
                 db.commit()#here we commit the results in our database
+                time.sleep(1)
         except KeyboardInterrupt:
             pass
     else:
