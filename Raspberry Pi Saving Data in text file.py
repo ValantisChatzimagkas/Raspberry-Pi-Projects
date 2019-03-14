@@ -29,6 +29,7 @@ file.close()#we close the file ass soon as we finish
 """ PART 2 IMPLEMENTATION WITH THE USE OF A FUNCTION  """
 from Adafruit_BME280 import *
 import datetime
+import time
 
 sensor = BME280(t_mode=BME280_OSAMPLE_8, p_mode=BME280_OSAMPLE_8)
 temperature = sensor.read_temperature()
