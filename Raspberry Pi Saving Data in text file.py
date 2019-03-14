@@ -50,6 +50,7 @@ def datalogging(option):
                 file.write("Temperature = {:.4f} ".format(temperature ))
                 file.write("Pressure = {:.4f} ".format(pressure))
                 file.write("\n")
+                time.sleep(1)
     elif option == 'loop':
         try:
             while True:
@@ -59,6 +60,7 @@ def datalogging(option):
                 file.write("Temperature = {:.4f} ".format(temperature))
                 file.write("Pressure = {:.4f} ".format(pressure))
                 file.write("\n")
+                time.sleep(1)
         except KeyboardInterrupt:
             pass
     else:
