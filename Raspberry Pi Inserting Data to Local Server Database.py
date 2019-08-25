@@ -19,7 +19,7 @@ pressure = (sensor.read_pressure())/100#we access the pressure read of the senso
 
 db = pymysql.connect("YOUR_HOST","YOUR_USERNAME","YOUR_PASSWORD","YOUR_DATABASE" )#creates a variable called db and we provide the credentials to logo
 cursor = db.cursor()#"A cursor allows you to iterate a set of rows returned by a query and process each row accordingly" taken from http://www.mysqltutorial.org/mysql-cursor/
-cursor.execute("INSERT INTO YOUR_TABLE(temperature,pressure)"\ #inserts in your table's collumns the data given below
+cursor.execute("INSERT INTO YOUR_TABLE(temperature,pressure)"\ #inserts data to the specific columns
                   "VALUES('%s','%s')" ,(temperature,pressure))#here we provide the sensor data
 db.commit()#here we commit the results in our database
 
